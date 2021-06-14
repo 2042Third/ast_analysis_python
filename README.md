@@ -5,7 +5,7 @@ To start the analysis, enter
 Add "-w" flag at the end of the command to automatically write to a .json file named "ast_analysis.json" in the current directory.
 eg. "python3 ast_analysis.py "NAME-OF-THE-FOLDER"/ -w"
 
-".json" file structure:
+".json" file structure:\n
 {
   "DYNAMIC_FUNCTION_NAME":{
     "THE_FILE_CONTAINING_THIS_FUNCTION":"LINE_NUMBER",
