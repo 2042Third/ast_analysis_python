@@ -11,7 +11,7 @@ int main (int argc, char ** argv){
   } else {
     std::string usr_input(argv[1], (int) sizeof(argv[1]) / sizeof(char));
 
-    std::ifstream jsonFile("ast_analysis.json");
+    std::ifstream jsonFile(argv[1]);
 
     pt::ptree propt;
     pt::read_json(jsonFile, propt);
