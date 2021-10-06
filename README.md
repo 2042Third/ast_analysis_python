@@ -2,7 +2,7 @@
 
 <h3>Search for python dynamic functions in a folder </h3>
 To start the analysis, enter <br />
-"python ast_analysis.py \<name of the folder\>/"<br />
+"python ast_analysis.py  &#10092;name of the folder &#10093;"<br />
 
 Add "-w" flag at the end of the command to automatically write to a .json file named "ast_analysis.json" in the current directory.<br />
 
