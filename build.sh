@@ -1,0 +1,1 @@
+g++ -std=c++17 -m64 ast-mine-files-reader.cpp -g -o reader.out -lboost_thread -lpthread

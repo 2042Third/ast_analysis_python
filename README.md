@@ -1,11 +1,13 @@
 AST analysis of dynamic features of python.<br />
 <br />
 To start the analysis, enter <br />
-"python3 ast_analysis.py "NAME-OF-THE-FOLDER"/ "<br />
+"python ast_analysis.py \<name of the folder\>/"<br />
 
 Add "-w" flag at the end of the command to automatically write to a .json file named "ast_analysis.json" in the current directory.<br />
-eg. "python3 ast_analysis.py "NAME-OF-THE-FOLDER"/ -w"<br />
 
+To compile the c++ json reader example:<br/>
+run the scripts "build.cmd" or "build.sh".<br/> 
+(need a boost library)<br/>
 ".json" file structure:<br />
 {<br />
   "DYNAMIC_FUNCTION_NAME":{<br />
