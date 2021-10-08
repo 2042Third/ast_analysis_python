@@ -1,0 +1,27 @@
+{
+"getattr":{
+	"gnofract4d-4.3/fract4d/options.py":[167, 169],
+	"gnofract4d-4.3/fract4d_compiler/lex.py":[160, 166, 221, 455, 977, 1138],
+	"gnofract4d-4.3/fract4d_compiler/fsymbol.py":[947],
+	"gnofract4d-4.3/fract4dgui/gtkfractal.py":[231],
+	"gnofract4d-4.3/fract4d_compiler/yacc.py":[274, 280, 281, 285, 288, 289, 511, 512, 597, 688, 690, 844, 845, 924, 1006, 1008, 1226, 2227, 3261, 3374, 3397],
+	"gnofract4d-4.3/fract4d_compiler/translate.py":[833]	},
+"setattr":{
+	"gnofract4d-4.3/fract4d_compiler/translate.py":[184, 303]	},
+"eval":{
+	"gnofract4d-4.3/fract4d_compiler/fsymbol.py":[43, 51],
+	"gnofract4d-4.3/fract4d_compiler/codegen.py":[745],
+	"gnofract4d-4.3/fract4d_compiler/yacc.py":[1625]	},
+"hasattr":{
+	"gnofract4d-4.3/fract4d_compiler/tests/test_translate.py":[1431, 1639],
+	"gnofract4d-4.3/fract4d_compiler/lex.py":[720, 1195],
+	"gnofract4d-4.3/fract4d_compiler/tests/test_symbol.py":[65],
+	"gnofract4d-4.3/fract4dgui/settings.py":[697],
+	"gnofract4d-4.3/fract4d_compiler/fsymbol.py":[626, 680, 681, 827],
+	"gnofract4d-4.3/fract4dgui/gtkfractal.py":[528, 528, 669, 997, 1009],
+	"gnofract4d-4.3/fract4d_compiler/yacc.py":[628, 641, 701, 703, 946, 959, 1019, 1021, 1248, 1261, 1314, 1316],
+	"gnofract4d-4.3/fract4d_compiler/translate.py":[187, 247, 261],
+	"gnofract4d-4.3/fract4dgui/tests/test_director.py":[71],
+	"gnofract4d-4.3/fract4d_compiler/codegen.py":[407, 439, 451],
+	"gnofract4d-4.3/fract4d_compiler/function.py":[18, 20]	}
+}
