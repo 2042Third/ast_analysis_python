@@ -1,0 +1,69 @@
+Randomly selected files to see if the dynamic features used in the file is necessary.
+
+repo-python/proudlygeek/proudlygeek-blog/werkzeug/contrib/sessions.py:[101]
+not needed, author is trying to copy a dictionary
+
+repo-python/pychess/pychess/lib/pychess/Utils/lutils/egtb_gaviota.py:[200]
+not needed, translated from a c project, " # Prototypes from gtb-probe.h follow."
+
+repo-python/ui/django-cached_authentication_middleware/cached_auth/__init__.py:[46, 67, 92, 96, 113]
+46, not needed, used in init, checking if a setting exists, "hasattr(settings, 'CACHED_AUTH_PREPROCESSOR'):"
+67, 92, 96, 113, same as above
+
+repo-python/openbroadcaster/obplayer/obplayer/alerts/triggers/streamer.py:[37, 42]
+37, 42, net needed, used in init, checking if the process/setting exists, " if hasattr(obplayer, 'Streamer'):"
+
+repo-python/beeverycreative/BEEweb/src/octoprint/util/pip.py:[406]
+maybe needed or large rewrite needed, used in init, "virtual_env = hasattr(sys, "real_prefix")"
+
+repo-python/ingadhoc/odoo-argentina/l10n_ar_afipws_fe/models/account_journal_document_type.py:[63]
+not needed, regex uses, "ver como hacer para que tome los enter en los mensajes(see how to make it take the enter in the messages)"
+
+repo-python/PhonologicalCorpusTools/CorpusTools/corpustools/prod/pred_of_dist.py:[30]
+not needed, regex
+
+repo-python/davesque/django-rest-framework-simplejwt/rest_framework_simplejwt/tokens.py:[161]
+not needed, getting data from a input
+
+repo-python/willm/DDEXUI/metadata_form.py:[73]
+not needed, GUI element icon
+
+repo-python/IronLanguages/ironpython2/Src/StdLib/Lib/test/test_imaplib.py:[94]
+not needed, testing purpose
+
+repo-python/wavefrontHQ/python-client/wavefront_api_client/models/paged_account.py:[243]
+not needed, "to_dict()"
+
+
+
+evals() only.
+
+repo-python/sgrvinod/ml4seti-Effsubsee/train.py:[70]
+not needed, dispatching function calls with cmd arguments
+
+repo-python/listyque/TACTIC-Handler/thlib/side/client/tactic_client_lib/common/common.py:[40, 42]
+needed, this function/feature cannot be replaced by static once, dynamically import libraries, "from %s import %s"
+
+repo-python/myhdl/myhdl/myhdl/conversion/_misc.py:[140]
+not needed, used in conversion from one language to another, this can be done statically. However, the project heavily used dynamic features  
+
+repo-python/WorldException/v7py/v7/md_reader.py:[157]
+not needed, used to parse metadata files, looks to be a json-like format file. 
+
+repo-python/tornadomeet/mxnet/example/rcnn/rcnn/utils/load_data.py:[27, 37, 39]
+not needed, used to load data set, and call functions, can be replaced by if-else
+
+repo-python/zstackio/zstack-woodpecker/integrationtest/vm/basic/test_create_vnc_vm.py:[41, 44]
+not needed, used to check console commands
+
+repo-python/UWNetworksLab/metasync/metasync/mapping.py:[139]
+not needed, used to load data, "poor man's marshaling", the project heavily uses dynamic and functiona features
+
+repo-python/rocky/python3-trepan/trepan/lib/display.py:[43, 112]
+not needed, used in display driver (gdb-like) to call functions, this project heavily uses dynamic functions
+
+repo-python/jctanner/ansible/lib/ansible/modules/network/fortios/fortios_ips_rule_settings.py:[219]
+not needed, used to resolve and then respond a http request
+
+repo-python/motet/baldr/scripts/simulators.py:[141]
+not needed, used to decode morse code

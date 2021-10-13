@@ -1,0 +1,15 @@
+random all:
+*********
+*
+
+random eval:
+*********
+*
+
+
+It apears that a project would be more likely to use dynamic functions once it already uses one. The reason is two fold, for getattr() and setattr() they are in the same "family" of attribute checking and changing. Other possible reason is that the authors who used the dynamic features are mostly for convenience, thus it is reasonable to assume a project with a tighter time and budget constraint would be more likely to use them.
+
+Importing libraries dynamically was used. This cannot be done in a static way. 
+
+
+

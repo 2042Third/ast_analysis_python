@@ -59,8 +59,8 @@ int main (int argc, char ** argv){
           count++;
           file_freq++;
         }
-        proj_freq(out_tree,property.first+"."+elem_name,file_freq);
-        // out_tree.put(property.first+"."+elem_name,file_freq);
+        proj_freq(out_tree,elem_name,file_freq);
+        // proj_freq(out_tree,property.first+"."+elem_name,file_freq);
       }
       std::cout << "\t-"<< count<<" occurences in "<<count_file<<" files" << "\n";
       count = 0;
