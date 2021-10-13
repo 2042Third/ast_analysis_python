@@ -2,14 +2,19 @@ random all:
 *********
 *
 
+6/10 are programming language related projects
+
 random eval:
 *********
 *
+7/10 are programming language related projects
 
 
 It apears that a project would be more likely to use dynamic functions once it already uses one. The reason is two fold, for getattr() and setattr() they are in the same "family" of attribute checking and changing. Other possible reason is that the authors who used the dynamic features are mostly for convenience, thus it is reasonable to assume a project with a tighter time and budget constraint would be more likely to use them.
 
 Importing libraries dynamically was used. This cannot be done in a static way. 
 
+Many uses of dynamic features happen in language-related features (13/20 simple randomly chosen), such as reading json, parsing command-line arguments, decoding languages, converting languages. In a programming language perspective, a language can be resolved statically given context-free, lattice structure and few other constraints making a language "compilable". Morse code, for example, has context-free grammar and a finite amount of resolutions. Does this mean programming language related features are more reliant/easier-to-write with dynamic features? The programmer could be more familiar to the python language and the features it provids.
 
+Out of all files inspected, the onces that cannot be replaced by static functions/features are constraint on the amount of work needed to be done if they were to go static, instead of the absolute impossibility of using static features to solve the problems presented. The library import one should not be a big problem, since the programmer can import all needed modules and libraries before run-time. 
 
