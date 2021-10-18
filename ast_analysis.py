@@ -56,14 +56,16 @@ def find_all_file(visitor, fs, offset):
 
 def lib_check(fs):
   tSTART = time.time()
+  oufile_name = "ast_analysis_data.csv"
+
   visitor = ast_call.Analysis_Ast_call()
+  visitor.clean_file_db(oufile_name);
   find_all_file(visitor, fs,sys.argv[1])
   inp = ' '
-
+  visitor.close_file_db()
   print("\nFinished search for "+str(count_files)+" files"+" ({:.02f}s)".format(time.time() - tSTART))
   if writing_file:
-    oufile_name = "ast_analysis.json"
-    visitor.write_to_file(oufile_name)
+    # visitor.write_to_file(oufile_name)
     print("written to file \"{}\"".format(oufile_name))
   else:
     while len(inp)!= 0 or inp=="n":

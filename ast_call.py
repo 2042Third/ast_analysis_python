@@ -15,6 +15,12 @@ class Analysis_Ast_call(ast.NodeVisitor):
   exec_c = 0
   eval_env = {}
   current_name=""
+  outfile_name =""
+  outfile=""
+  dynamic_function="DYN"# dynamic
+  functional_function="FNL"# functional
+  decorator_function="DEC"# decorator
+  target_list_dynamic = ["getattr","setattr","delattr","hasattr","eval","exec"]
   # global mutex_lock 
   def _init_(self):
     self.count = 0
@@ -59,81 +65,39 @@ class Analysis_Ast_call(ast.NodeVisitor):
   def visiting_this(self, node, name ):
     self.current_name = name
     self.visit(node)
+
+  # a = func name
+  # b = line number
+  def log_current(self, a, b,func_type):
+    tmp_l = self.get_current_line(self.current_name,func_type,a,b)
+    self.outfile.write(", ".join(tmp_l)+"\n")
+
+  
+  # regex_resolve_level
+  def rrl(self, f_path,level):
+    lvls = f_path.split("/")
+    if(level<=0):
+      return lvls[-1]
+    elif(len(lvls)>=level):
+      return lvls[level-1]
+    else:
+      return ""
+
   def visit_Call(self, node):
-    # global mutex_lock
-    # mutex_lock.acquire()
-    if isinstance(node.func, ast.Name):
-      if("getattr" == node.func.id):
-        self.getattr_c = self.getattr_c + 1
-        self.c_init_env("getattr",self.current_name)
-        self.eval_env["getattr"][self.current_name].append(node.lineno)
-      elif("setattr" == node.func.id):
-        self.setattr_c = self.setattr_c + 1
-        self.c_init_env("setattr",self.current_name)
-        self.eval_env["setattr"][self.current_name].append(node.lineno)
-      elif("delattr" == node.func.id):
-        self.delattr_c = self.delattr_c + 1
-        self.c_init_env("delattr",self.current_name)
-        self.eval_env["delattr"][self.current_name].append(node.lineno)
-      elif("hasattr" == node.func.id):
-        self.hasattr_c = self.hasattr_c + 1
-        self.c_init_env("hasattr",self.current_name)
-        self.eval_env["hasattr"][self.current_name].append(node.lineno)
-      elif("eval" == node.func.id):
-        self.eval_c = self.eval_c + 1
-        self.c_init_env("eval",self.current_name)
-        self.eval_env["eval"][self.current_name].append(node.lineno)
-      elif("exec" == node.func.id):
-        self.exec_c = self.exec_c + 1
-        self.c_init_env("exec",self.current_name)
-        self.eval_env["exec"][self.current_name].append(node.lineno)
-    # mutex_lock.release()
-    for i in node.args:
-      if isinstance(i, ast.Name):
-        # mutex_lock.acquire()
-        if("getattr" == i.id):
-          self.getattr_c = self.getattr_c + 1
-          self.c_init_env("getattr",self.current_name)
-          self.eval_env["getattr"][self.current_name].append(node.lineno)
-        elif("setattr" == i.id):
-          self.setattr_c = self.setattr_c + 1
-          self.c_init_env("setattr",self.current_name)
-          self.eval_env["setattr"][self.current_name].append(node.lineno)
-        elif("delattr" == i.id):
-          self.delattr_c = self.delattr_c + 1
-          self.c_init_env("delattr",self.current_name)
-          self.eval_env["delattr"][self.current_name].append(node.lineno)
-        elif("hasattr" == i.id):
-          self.hasattr_c = self.hasattr_c + 1
-          self.c_init_env("hasattr",self.current_name)
-          self.eval_env["hasattr"][self.current_name].append(node.lineno)
-        elif("eval" == i.id):
-          self.eval_c = self.eval_c + 1
-          self.c_init_env("eval",self.current_name)
-          self.eval_env["eval"][self.current_name].append(node.lineno)
-        elif("exec" == i.id):
-          self.exec_c = self.exec_c + 1
-          self.c_init_env("exec",self.current_name)
-          self.eval_env["exec"][self.current_name].append(node.lineno)
-        # mutex_lock.release()
-
-
-    if isinstance(node, ast.Name):
-      self.name_count = self.name_count+1
-    
-    self.count=self.count+1
-    self.generic_visit(node)
+      if isinstance(node.func, ast.Name):
+        if(node.func.id in self.target_list_dynamic):
+          self.log_current(node.func.id,node.lineno,self.dynamic_function)
+      for i in node.args:
+        if isinstance(i, ast.Name):
+          if(i.id in self.target_list_dynamic):
+            self.log_current(i.id,node.lineno,self.dynamic_function)
+      self.generic_visit(node)
 
   def visit_Name(self, node):
-    # global mutex_lock
-    # mutex_lock.acquire()
     self.name_count = self.name_count+1
-    # mutex_lock.release()
     self.generic_visit(node)
 
   def visit_Subscript(self,node):
-    # global mutex_lock
-    # mutex_lock.acquire()
     self.subscrip_count = self.subscrip_count+1
     # mutex_lock.release()
     self.generic_visit(node)
@@ -157,3 +121,22 @@ class Analysis_Ast_call(ast.NodeVisitor):
 
     oufile.write("}\n")
     oufile.close()
+  def get_current_line(self,fpath,func_type,func_name,lineno):
+    tmp=list()
+    tmp.append(self.rrl(fpath,1)) # path level 1
+    tmp.append(self.rrl(fpath,2)) # path level 2
+    tmp.append(self.rrl(fpath,3)) # path level 3
+    tmp.append(fpath) # full path
+    tmp.append(self.rrl(fpath,-1)) # file name 
+    tmp.append(func_type)
+    tmp.append(func_name)
+    tmp.append(str(lineno)) # line number
+    out_tmp=["\""+x+"\"" for x in tmp]
+    return out_tmp
+  def clean_file_db(self,oufile_name):
+    oufile=open(oufile_name,"w")
+    oufile.close()
+    self.outfile_name=oufile_name
+    self.outfile = open(oufile_name,"a")
+  def close_file_db(self):
+    self.outfile.close()
