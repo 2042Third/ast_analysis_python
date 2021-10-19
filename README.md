@@ -1,30 +1,15 @@
-<h2>AST analysis of dynamic features of python.</h2>
+<h2>python AST mining</h2>
 
-<h3>Search for python dynamic functions in a folder </h3>
-To start the analysis, enter <br />
-"python ast_analysis.py  &#10092;name of the folder &#10093;"<br />
-
-Add "-w" flag at the end of the command to automatically write to a .json file named "ast_analysis.json" in the current directory.<br />
-
-<h3>Interpret the mined files </h3>
-To compile the c++ json reader example:<br/>
-run the scripts "build.cmd" or "build.sh".<br/> 
-(need a boost library)<br/><br/>
-<h3>Output file </h3>
-
-".json" file structure:<br />
-{<br />
-  "DYNAMIC_FUNCTION_NAME":{<br />
-    "THE_FILE_CONTAINING_THIS_FUNCTION":"LINE_NUMBER",<br />
-    ...<br />
-  },<br />
-  ...<br />
-}<br />
-
-<h3>Bugs </h3>
-
-Adds an extra comma at the end of the ".json" file.<br />
-  Temp fix: Delete the last comma of the ".json" files <br />
-
-
+<h3>Mining Program</h3>
+On a Unix machine "linux/wsl/macos"</br>
+in the root folder of this project input command</br>
+"python ast_analysis.py &#10092;target folder&#10093;/ -w"</br>
+to start the mining.</br>
+</br>
+The result will be written a file named "ast_analysis_data.csv" in the root folder.</br>
+<h3>Load into SQL</h3>
+The provided sql script "ast_analysis.sql" will load the result into a database called "astmine" in table "output".</br>
+Some query script are provided in the file "sql_scripts.sql" </br>
+<h3>Download Our Result</h3>
+<a href="https://u.pcloud.link/publink/show?code=XZWkCEXZEuWH3dbEB4hDza31GHQi4jFe0sEV">Downlond Our Result</a>.
 
