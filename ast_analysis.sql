@@ -1,4 +1,4 @@
-DROP DATABASE astmine;
+-- DROP DATABASE astmine;
 CREATE SCHEMA astmine;
 USE astmine;
 

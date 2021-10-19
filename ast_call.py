@@ -21,6 +21,9 @@ class Analysis_Ast_call(ast.NodeVisitor):
   functional_function="FNL"# functional
   decorator_function="DEC"# decorator
   target_list_dynamic = ["getattr","setattr","delattr","hasattr","eval","exec"]
+  target_list_functional = []
+  target_list_decorators = []
+
   # global mutex_lock 
   def _init_(self):
     self.count = 0
@@ -84,17 +87,62 @@ class Analysis_Ast_call(ast.NodeVisitor):
       return ""
 
   def visit_Call(self, node):
-      if isinstance(node.func, ast.Name):
-        if(node.func.id in self.target_list_dynamic):
-          self.log_current(node.func.id,node.lineno,self.dynamic_function)
-      for i in node.args:
-        if isinstance(i, ast.Name):
-          if(i.id in self.target_list_dynamic):
-            self.log_current(i.id,node.lineno,self.dynamic_function)
-      self.generic_visit(node)
+    if isinstance(node.func, ast.Name):
+      if(node.func.id in self.target_list_dynamic):
+        self.log_current(node.func.id,node.lineno,self.dynamic_function)
+    for i in node.args:
+      if isinstance(i, ast.Name):
+        if(i.id in self.target_list_dynamic):
+          self.log_current(i.id,node.lineno,self.dynamic_function)
+    self.generic_visit(node)
+
+  def visit_FunctionDef(self, node):
+    for i in node.decorator_list:
+      if isinstance(i, ast.Name):
+        self.log_current(i.id,node.lineno,self.decorator_function)
+
+    self.generic_visit(node)
+
+  def visit_AsyncFunctionDef(self, node):
+    for i in node.decorator_list:
+      if isinstance(i, ast.Name):
+        self.log_current(i.id,node.lineno,self.decorator_function)
+
+    self.generic_visit(node)
+
+  def visit_ClassDef(self, node):
+    for i in node.decorator_list:
+      if isinstance(i, ast.Name):
+        self.log_current(i.id,node.lineno,self.decorator_function)
+
+    self.generic_visit(node)
+
+  def visit_Lambda(self, node):
+    self.log_current("lambda",node.lineno,self.functional_function)
+    self.generic_visit(node)
+
+  def visit_SetComp(self, node):
+    self.log_current("setComp",node.lineno,self.functional_function)
+    self.generic_visit(node)
+
+  def visit_DictComp(self, node):
+    self.log_current("dictComp",node.lineno,self.functional_function)
+    self.generic_visit(node)
+
+  def visit_Yield(self, node):
+    self.log_current("yield",node.lineno,self.functional_function)
+    self.generic_visit(node)
+
+  def visit_YieldFrom(self, node):
+    self.log_current("yieldFrom",node.lineno,self.functional_function)
+    self.generic_visit(node)
+
+
+  def visit_ListComp(self, node):
+    self.log_current("listComp",node.lineno,self.functional_function)
+    self.generic_visit(node)
 
   def visit_Name(self, node):
-    self.name_count = self.name_count+1
     self.generic_visit(node)
 
   def visit_Subscript(self,node):
