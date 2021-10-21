@@ -11,7 +11,7 @@ The result will be written a file named "ast_analysis_data.csv" in the root fold
 The provided sql script "ast_analysis.sql" will load the result into a database called "astmine" in table "output".</br>
 Some query script are provided in the file "sql_scripts.sql" </br>
 <h3>Download Our Result</h3>
-<a href="https://u.pcloud.link/publink/show?code=XZ60CEXZGrW9oWXazFm7RnUryUkfQXq4Qzz7" target="_blank" rel="noopener noreferrer">csv</a></br>
+<a href="http://pdm.pw:8080/fileserv/file-serv/ast_analysis_data.csv" target="_blank" rel="noopener noreferrer">csv (10,21,2021)</a></br>
 <a href="https://u.pcloud.link/publink/show?code=XZWkCEXZEuWH3dbEB4hDza31GHQi4jFe0sEV" target="_blank" rel="noopener noreferrer">sql inserts</a></br>
 
 

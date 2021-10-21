@@ -90,10 +90,10 @@ class Analysis_Ast_call(ast.NodeVisitor):
     if isinstance(node.func, ast.Name):
       if(node.func.id in self.target_list_dynamic):
         self.log_current(node.func.id,node.lineno,self.dynamic_function)
-    for i in node.args:
-      if isinstance(i, ast.Name):
-        if(i.id in self.target_list_dynamic):
-          self.log_current(i.id,node.lineno,self.dynamic_function)
+    # for i in node.args:
+    #   if isinstance(i, ast.Name):
+    #     if(i.id in self.target_list_dynamic):
+    #       self.log_current(i.id,node.lineno,self.dynamic_function)
     self.generic_visit(node)
 
   def visit_FunctionDef(self, node):
