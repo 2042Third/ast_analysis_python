@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
+from sklearn.multioutput import MultiOutputClassifier
 
 #ast data
 ad = pd.read_csv('new.csv')
@@ -23,6 +24,10 @@ model = gnb.fit(X_train, y_train.values.ravel())
 y_pred = model.predict(X_test)
 print(classification_report(y_test,y_pred))
 print(confusion_matrix(y_test, y_pred))
+xnew = [[0, 0], [1, 0], [0, 1]]
+ynew = model.predict_proba(xnew)
+for i in range(len(xnew)):
+	print("X=%s, Predicted=%s" % (xnew[i], ynew[i]))
 
 while True:
   dn, fc = [int(x) for x in input("Next prediction\n").split(',')]
