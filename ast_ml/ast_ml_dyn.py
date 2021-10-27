@@ -3,7 +3,7 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "a39780d1",
+   "id": "c7e5b4a0",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -22,7 +22,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "618e471e",
+   "id": "47012308",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -32,7 +32,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "962a5699",
+   "id": "a248f1cc",
    "metadata": {},
    "source": [
     "## Functional and Dynamic"
@@ -41,7 +41,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "8ab09bee",
+   "id": "5890a28e",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -53,7 +53,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "4d6e17b2",
+   "id": "153458b6",
    "metadata": {},
    "source": [
     "### Bayesian"
@@ -62,7 +62,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "a19de907",
+   "id": "7bed62ee",
    "metadata": {},
    "outputs": [
     {
@@ -87,7 +87,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7f3a6707",
+   "id": "87366669",
    "metadata": {},
    "source": [
     "### Gaussian "
@@ -96,7 +96,7 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "54cb69a5",
+   "id": "a1246f91",
    "metadata": {},
    "outputs": [
     {
@@ -141,7 +141,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7421decb",
+   "id": "2e8d421d",
    "metadata": {},
    "source": [
     "### Logistic Regression"
@@ -150,7 +150,7 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "aee6389e",
+   "id": "6535c03d",
    "metadata": {},
    "outputs": [
     {
@@ -195,7 +195,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "103d9686",
+   "id": "09cba6c4",
    "metadata": {},
    "source": [
     "### Neural Network"
@@ -204,7 +204,7 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "3e740052",
+   "id": "9b39ba48",
    "metadata": {},
    "outputs": [
     {
@@ -213,22 +213,22 @@
      "text": [
       "              precision    recall  f1-score   support\n",
       "\n",
-      "           0       0.71      0.85      0.77       978\n",
-      "           1       0.92      0.83      0.87      1980\n",
+      "           0       0.66      1.00      0.80       978\n",
+      "           1       1.00      0.75      0.86      1980\n",
       "\n",
-      "    accuracy                           0.84      2958\n",
-      "   macro avg       0.81      0.84      0.82      2958\n",
-      "weighted avg       0.85      0.84      0.84      2958\n",
+      "    accuracy                           0.83      2958\n",
+      "   macro avg       0.83      0.87      0.83      2958\n",
+      "weighted avg       0.89      0.83      0.84      2958\n",
       "\n",
-      "[[ 836  142]\n",
-      " [ 344 1636]]\n",
-      "Precision score: 0.9201349831271091\n",
-      "X=[0, 1], Predicted=[0.493, 0.507]\n",
+      "[[ 978    0]\n",
+      " [ 499 1481]]\n",
+      "Precision score: 1.0\n",
+      "X=[0, 1], Predicted=[0.619, 0.381]\n",
       "X=[1, 0], Predicted=[0.0, 1.0]\n",
-      "X=[0, 10], Predicted=[0.724, 0.276]\n",
-      "X=[0, 20], Predicted=[0.615, 0.385]\n",
-      "X=[0, 50], Predicted=[0.69, 0.31]\n",
-      "X=[0, 80], Predicted=[0.755, 0.245]\n",
+      "X=[0, 10], Predicted=[0.763, 0.237]\n",
+      "X=[0, 20], Predicted=[0.688, 0.312]\n",
+      "X=[0, 50], Predicted=[0.723, 0.277]\n",
+      "X=[0, 80], Predicted=[0.791, 0.209]\n",
       "X=[0, 100], Predicted=[0.0, 1.0]\n"
      ]
     }
@@ -249,7 +249,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "875e4d81",
+   "id": "fb93d086",
    "metadata": {},
    "outputs": [],
    "source": []
@@ -257,7 +257,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "80cc15c4",
+   "id": "3fffc6a2",
    "metadata": {},
    "outputs": [],
    "source": []
