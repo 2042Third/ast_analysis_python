@@ -4,7 +4,7 @@
   <li>python3</li>
   <li>Unix Environment</li>
   <li>python numpy(ml, diagram)</li>
-  <li>python matlablib(diagram)</li>
+  <li>python matplot(diagram)</li>
   <li>python panda(ml)</li>
   <li>python scikit-learn(ml)</li>
   <li>c++ boost(json reader)</li>
