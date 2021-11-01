@@ -1,5 +1,14 @@
 <h2>python AST mining</h2>
-
+<h3>Requirements</h3>
+<ul>
+  <li>python3</li>
+  <li>Unix Environment</li>
+  <li>python numpy(ml, diagram)</li>
+  <li>python matlablib(diagram)</li>
+  <li>python panda(ml)</li>
+  <li>python scikit-learn(ml)</li>
+  <li>c++ boost(json reader)</li>
+</ul>
 <h3>Mining Program</h3>
 On a Unix machine "linux/wsl/macos"</br>
 in the root folder of this project input command</br>
