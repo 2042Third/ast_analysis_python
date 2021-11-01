@@ -1,7 +1,8 @@
+#-*-coding:UTF-8-*-
 import ast
-# from multicore_ast_analysis import *
-#import threading
+import codecs
 global mutex_lock
+import os
 
 class Analysis_Ast_call(ast.NodeVisitor):
   count = 1
@@ -73,12 +74,17 @@ class Analysis_Ast_call(ast.NodeVisitor):
   # b = line number
   def log_current(self, a, b,func_type):
     tmp_l = self.get_current_line(self.current_name,func_type,a,b)
-    self.outfile.write(", ".join(tmp_l)+"\n")
+    print(tmp_l)
+    try:
+      self.outfile.write(", ".join(tmp_l)+"\n")
+    except: # Handles different languages
+      self.outfile.write(", ".join([str(bytes(i, 'utf-8')) for i in tmp_l])+"\n")
+    
 
   
   # regex_resolve_level
   def rrl(self, f_path,level):
-    lvls = f_path.split("/")
+    lvls = f_path.split(os.path.sep)
     if(level<=0):
       return lvls[-1]
     elif(len(lvls)>=level):

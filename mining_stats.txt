@@ -1,4 +1,4 @@
-Directory: gnofract4d-4.3/
-total files: 167
-error files: 0
-Time taken: 0.67 sec.
+Directory: repo-python\AlphaSmartDog\DeepLearningNotes\
+total files: 129
+error files: 15
+Time taken: 0.73 sec.

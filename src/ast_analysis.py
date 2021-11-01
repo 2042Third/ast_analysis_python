@@ -1,3 +1,4 @@
+#coding=utf-8  
 import ast
 import subprocess
 import sys
@@ -30,7 +31,7 @@ def find_all_file(visitor, fs, offset):
       if verbosity:
         print("-{}".format(offset+item))
       try:
-        code = ast.parse(Path(offset+item ).read_text())
+        code = ast.parse(Path(offset+item , encoding="utf").read_text())
       except:
         if verbosity:
           print("ERROR: Python cannot compile AST for {}!".format(offset+item))
@@ -46,11 +47,11 @@ def find_all_file(visitor, fs, offset):
       new_fs = list()
 
       new_fs = os.listdir(offset+item)
-      find_all_file(visitor, new_fs,offset+item+'/')
+      find_all_file(visitor, new_fs,offset+item+os.path.sep)
 
 def clean_name(a):
-  if a[-1]!="/" or a[-1]!="\\":
-    return a+"/"
+  if a[-1]!=os.path.sep :
+    return a+os.path.sep
   return a
 
 def lib_check(fs):
