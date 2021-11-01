@@ -1,0 +1,4 @@
+Directory: gnofract4d-4.3/
+total files: 167
+error files: 0
+Time taken: 2.26 sec.

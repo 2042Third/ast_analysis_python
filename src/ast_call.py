@@ -155,11 +155,8 @@ class Analysis_Ast_call(ast.NodeVisitor):
     for key in self.eval_env:
       oufile.write("\"{}\"".format(key))
       oufile.write(":{\n")
-      
       i=0
       for keys in self.eval_env[key]:
-        # print(self.eval_env[key][keys])
-
         if i != 0:
           oufile.write(",\n\t{:>20}:{}".format("\""+keys+"\"",self.eval_env[key][keys]))
         else:
