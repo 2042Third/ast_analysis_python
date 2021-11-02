@@ -1,0 +1,7 @@
+"funcname","freq"
+getattr,123881
+hasattr,100204
+setattr,34403
+eval,10780
+exec,5512
+delattr,1664
