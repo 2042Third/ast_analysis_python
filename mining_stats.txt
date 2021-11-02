@@ -1,4 +1,4 @@
-Directory: repo-python\AlphaSmartDog\DeepLearningNotes\
-total files: 129
-error files: 15
-Time taken: 0.73 sec.
+Directory: repo-python\
+total files: 1385873
+error files: 177957
+Time taken: 6652.75 sec.

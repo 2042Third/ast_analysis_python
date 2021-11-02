@@ -74,7 +74,7 @@ class Analysis_Ast_call(ast.NodeVisitor):
   # b = line number
   def log_current(self, a, b,func_type):
     tmp_l = self.get_current_line(self.current_name,func_type,a,b)
-    print(tmp_l)
+    # print(tmp_l)
     try:
       self.outfile.write(", ".join(tmp_l)+"\n")
     except: # Handles different languages
