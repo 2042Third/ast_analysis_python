@@ -1,4 +1,4 @@
-Directory: repo-python\
-total files: 1385873
-error files: 177957
-Time taken: 6652.75 sec.
+Directory: new_repo_python/checkout/checkout\
+total files: 446231
+error files: 27879
+Time taken: 2339.96 sec.

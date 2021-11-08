@@ -39,7 +39,10 @@ def find_all_file(visitor, fs, offset):
         count_exclusion = 1+ count_exclusion 
         continue
       ast_node = code
-      visitor.visiting_this(code,offset+item)
+      try:
+        visitor.visiting_this(code,offset+item)
+      except:
+        continue
 
     elif os.path.isdir(offset+item):
       if verbosity:
@@ -47,7 +50,11 @@ def find_all_file(visitor, fs, offset):
       new_fs = list()
 
       new_fs = os.listdir(offset+item)
-      find_all_file(visitor, new_fs,offset+item+os.path.sep)
+      try:
+        find_all_file(visitor, new_fs,offset+item+os.path.sep)
+      except:
+        continue
+
 
 def clean_name(a):
   if a[-1]!=os.path.sep :

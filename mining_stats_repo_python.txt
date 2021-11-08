@@ -1,0 +1,4 @@
+Directory: repo-python\
+total files: 1385873
+error files: 177957
+Time taken: 6652.75 sec.

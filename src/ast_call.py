@@ -148,8 +148,8 @@ class Analysis_Ast_call(ast.NodeVisitor):
     self.log_current("listComp",node.lineno,self.functional_function)
     self.generic_visit(node)
 
-  def visit_Name(self, node):
-    self.generic_visit(node)
+  # def visit_Name(self, node):
+  #   self.generic_visit(node)
 
   def visit_Subscript(self,node):
     self.subscrip_count = self.subscrip_count+1
