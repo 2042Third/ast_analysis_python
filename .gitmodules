@@ -1,0 +1,3 @@
+[submodule "scripts/shell"]
+	path = scripts/shell
+	url = https://github.com/2042third/shell.git
