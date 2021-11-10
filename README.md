@@ -109,16 +109,31 @@ Total Projects.
 </tr></table>
 
 The results showing organization/project grouped diagrams for the three features. Functional features (dark blue) is greater than dynamic and decorators feature uses; always having bigger overlap with the other two features. 
+
+
 Dynamic feature and decorators each have about half mutually exclusive proportions.
+
+Our initial estimation using [Excel](https://github.com/2042Third/ast_analysis_python/blob/main/ast_ml/python_repo_stat.xlsx) gives a probability of \*66%. 
+
 
 ML model | prediction probability
 -- | --
 Bayesian Analysis | ~63%
-Gaussian Naive Bayesian | ~93% or ~6%
+\*\* Gaussian Naive Bayesian | ~93% or ~6%
 Logistic Regression | ~55%
 Neural Network | ~63%
 
-\* Gaussian Naive Bayesian would not be able to give a prediction probability because the formula estimates using maximum likelihood.
+\*Given an organization have used one of f, d, or c; there is x probability that the organization would use another feature out of the three.
+
+
+\*\* Gaussian Naive Bayesian would not be able to give a prediction probability because the formula estimates using maximum likelihood.
+
+
+### Dynamic Feature
+
+There are 40 source files read. 3 out of 40 source files used dynamic feature in a context that cannot be replaced by static features.
+
+To be finished
 
 ## Requirements
 
