@@ -12,6 +12,10 @@ This project mines a large Python repository and extract statistics using variou
       * [Relationship Between Features](#relationship-between-features)
       * [Dynamic Feature](#dynamic-feature)
   * [Results](#results)
+    * [Overall](#overall)
+    * [Relationship Between Features](#relationship-between-features)
+    * [Machine Learning](#machine-learning)
+    * [Dynamic Feature](#dynamic-feature)
   * [Requirements](#requirements)
   * [Download Results](#download-results)
 
