@@ -94,10 +94,12 @@ Total Projects.
 
 ### Relationship Between the Features
 
+<table><tr>
+<td> <img src="./diagrams/organization/index2.png" alt="Drawing" style="width: 250px;" />  </td>
+<td> <img src="./diagrams/organization/index3.png" alt="Drawing" style="width: 250px;" />  </td>
+<td><img src="./diagrams/organization/index4.png" alt="Drawing" style="width: 250px;"/> </td>
+</tr></table>
 
-<img src="./diagrams/organization/index2.png" alt="Drawing" /> 
-<img src="./diagrams/organization/index3.png" alt="Drawing" /> 
-<img src="./diagrams/organization/index4.png" alt="Drawing" /> 
 
 <img src="./diagrams/project/index2.png" alt="Drawing" /> 
 <img src="./diagrams/project/index3.png" alt="Drawing" /> 
