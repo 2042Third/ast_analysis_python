@@ -103,8 +103,8 @@ Total Projects.
 <td><img src="./diagrams/organization/index4.png" alt="Drawing" style="width: 500px;"/> </td>
 <td> <img src="./diagrams/organization/index2.png" alt="Drawing" style="width: 500px;" />  </td>
 </tr><tr>
-<td> Functional & Decorators </td>
-<td> Functional & Dynamic </td>
+<td> `Functional` & Decorators </td>
+<td> `Functional` & Dynamic </td>
 <td> Dynamic & Decorators </td>
 </tr></table>
 
