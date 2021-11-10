@@ -27,14 +27,14 @@ Some query script are provided in the file "sql_scripts.sql" </br>
 
 ## Requirements
 
--python3
--Unix Environment
--numpy(ml, diagram)
--matplot(diagram)
--panda(ml)
--scikit-learn(ml)
--squarify(treemap)
--c++ boost(json reader)
+- python3
+- Unix Environment
+- numpy(ml, diagram)
+- matplot(diagram)
+- panda(ml)
+- scikit-learn(ml)
+- squarify(treemap)
+- c++ boost(json reader)
 
 ## Download Results
 
