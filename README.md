@@ -73,18 +73,18 @@ We randomly choose 40 programs in the repository and read the source code to det
 
 <img src="./diagrams/overall_proportions.png" alt="Drawing" />
 
-Out of 1,385,873 files, 
+Total 1,385,873 files.
 
 feature | count | %
 -- | -- | --
 none | 912,878 | 65.8%
-func | 213,313 | 15.4%
-dec | 96,178 | 6.9%
-dyn | 50,185 | 3.6%
-func & dec | 49,837 | 3.6%
-func & dyn | 32,484 | 2.3%
-func & dyn & dec | 16,918 | 1.2%
-dyn & dec | 13,080 | 0.9%
+functional | 213,313 | 15.4%
+decorators | 96,178 | 6.9%
+dynamic | 50,185 | 3.6%
+functional & decorators | 49,837 | 3.6%
+functional & dynamic | 32,484 | 2.3%
+functional & dynamic & decorators | 16,918 | 1.2%
+dynamic & decorators | 13,080 | 0.9%
 
 <img src="./diagrams/organization/index.png" alt="Drawing" /> 
 <img src="./diagrams/project/index.png" alt="Drawing" /> 
