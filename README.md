@@ -95,19 +95,20 @@ Total Projects.
 ### Relationship Between the Features
 
 <table><tr>
-<td> <img src="./diagrams/organization/index2.png" alt="Drawing" style="width: 500px;" />  </td>
+<td> <img src="./diagrams/project/index3.png" alt="Drawing" style="width: 500px;" />  </td>
+<td><img src="./diagrams/project/index4.png" alt="Drawing" style="width: 500px;"/> </td>
+<td> <img src="./diagrams/project/index2.png" alt="Drawing" style="width: 500px;" />  </td>
+</tr><tr>
 <td> <img src="./diagrams/organization/index3.png" alt="Drawing" style="width: 500px;" />  </td>
 <td><img src="./diagrams/organization/index4.png" alt="Drawing" style="width: 500px;"/> </td>
+<td> <img src="./diagrams/organization/index2.png" alt="Drawing" style="width: 500px;" />  </td>
 </tr><tr>
-<td> Dynamic & Decorators </td>
 <td> Functional & Decorators </td>
 <td> Functional & Dynamic </td>
+<td> Dynamic & Decorators </td>
 </tr></table>
 
 
-<img src="./diagrams/project/index2.png" alt="Drawing" /> 
-<img src="./diagrams/project/index3.png" alt="Drawing" /> 
-<img src="./diagrams/project/index4.png" alt="Drawing" /> 
 
 
 ## Requirements
