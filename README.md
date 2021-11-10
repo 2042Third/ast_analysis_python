@@ -95,6 +95,10 @@ Total Projects.
 ### Relationship Between the Features
 
 <table><tr>
+<td> Functional & Decorators </td>
+<td> Functional & Dynamic </td>
+<td> Dynamic & Decorators </td>
+</tr><tr>
 <td> <img src="./diagrams/project/index3.png" alt="Drawing" style="width: 500px;" />  </td>
 <td><img src="./diagrams/project/index4.png" alt="Drawing" style="width: 500px;"/> </td>
 <td> <img src="./diagrams/project/index2.png" alt="Drawing" style="width: 500px;" />  </td>
@@ -102,14 +106,19 @@ Total Projects.
 <td> <img src="./diagrams/organization/index3.png" alt="Drawing" style="width: 500px;" />  </td>
 <td><img src="./diagrams/organization/index4.png" alt="Drawing" style="width: 500px;"/> </td>
 <td> <img src="./diagrams/organization/index2.png" alt="Drawing" style="width: 500px;" />  </td>
-</tr><tr>
-<td> `Functional` & Decorators </td>
-<td> `Functional` & Dynamic </td>
-<td> Dynamic & Decorators </td>
 </tr></table>
 
+The results showing organization/project grouped diagrams for the three features. Functional features (dark blue) is greater than dynamic and decorators feature uses; always having bigger overlap with the other two features. 
+Dynamic feature and decorators each have about half mutually exclusive proportions.
 
+ML model | prediction probability
+-- | --
+Bayesian Analysis | ~63%
+* Gaussian Naive Bayesian | ~93% or ~6%
+Logistic Regression | ~55%
+Neural Network | ~63%
 
+* Gaussian Naive Bayesian would not be able to give a prediction probability because the formula estimates using maximum likelihood.
 
 ## Requirements
 
