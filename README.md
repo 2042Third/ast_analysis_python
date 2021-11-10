@@ -87,7 +87,22 @@ functional & dynamic & decorators | 16,918 | 1.2%
 dynamic & decorators | 13,080 | 0.9%
 
 <img src="./diagrams/organization/index.png" alt="Drawing" /> 
+Total 49545 Organizations.
 <img src="./diagrams/project/index.png" alt="Drawing" /> 
+Total Projects.
+
+
+### Relationship Between the Features
+
+
+<img src="./diagrams/organization/index2.png" alt="Drawing" /> 
+<img src="./diagrams/organization/index3.png" alt="Drawing" /> 
+<img src="./diagrams/organization/index4.png" alt="Drawing" /> 
+
+<img src="./diagrams/project/index2.png" alt="Drawing" /> 
+<img src="./diagrams/project/index3.png" alt="Drawing" /> 
+<img src="./diagrams/project/index4.png" alt="Drawing" /> 
+
 
 ## Requirements
 
