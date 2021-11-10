@@ -114,11 +114,11 @@ Dynamic feature and decorators each have about half mutually exclusive proportio
 ML model | prediction probability
 -- | --
 Bayesian Analysis | ~63%
-* Gaussian Naive Bayesian | ~93% or ~6%
+Gaussian Naive Bayesian | ~93% or ~6%
 Logistic Regression | ~55%
 Neural Network | ~63%
 
-* Gaussian Naive Bayesian would not be able to give a prediction probability because the formula estimates using maximum likelihood.
+\* Gaussian Naive Bayesian would not be able to give a prediction probability because the formula estimates using maximum likelihood.
 
 ## Requirements
 
