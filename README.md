@@ -70,7 +70,7 @@ We randomly choose 40 programs in the repository and read the source code to det
 
 ### Overall 
 
-<img src="./diagrams/overall_proportions.png" alt="Drawing" style="width: 250px;"/>
+<img src="./diagrams/overall_proportions.png" alt="Drawing" />
 <table><tr>
 <td> <img src="./diagrams/overall_proportions.png" alt="Drawing" style="width: 250px;"/> </td>
 <td> <img src="./diagrams/organization/index.png" alt="Drawing" style="width: 250px;"/> </td>
