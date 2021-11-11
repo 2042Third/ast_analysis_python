@@ -123,13 +123,20 @@ Our initial estimation using [Excel](https://github.com/2042Third/ast_analysis_p
 
 ML model | prediction probability
 -- | --
-Bayesian Analysis | ~63%
+Bayesian Linear Regression | ~63%
 \*\* Gaussian Naive Bayesian | ~93% or ~6%
 Logistic Regression | ~55%
 Neural Network | ~63%
 
-\*Given an organization have used one of f, d, or c; there is x probability that the organization would use another feature out of the three.
+- `Bayesian Regresson` is fitting for this research since there are enough data to "stanbilize" the model, where models like this has a frequentist approach. Also contrasting to the other models, this gives a single number that tells whether or not the prior belief is supported. 
 
+- A continuous data should benefit from a classifier model that supports it. However `Gaussian Naive Bayes` would give polarized results if the sets have very high spread. Given new  data for a prediction, this model is very accurate (94.4%), but due to the fundamentals of Gaussian statistics it cannot prove or disprove our theory. 
+
+- Despite being a binary classifier (`Logistic Regression`), we wanted to see if the multiclass model under the hood can test out the three feature given one feature (functional). It does support our thoery, but is fairly inaccurate (79%). 
+
+- The `Neural Network` prediction is given 3 layers of 11 neurons. We expect the model to zero-in on the proportions of functional features. It does support our theory; each non-zero input gives around 63% prediction probability.
+
+\*Given an organization have used one of f, d, or c; there is x probability that the organization would use another feature out of the three.
 
 \*\* Gaussian Naive Bayesian would not be able to give a prediction probability because the formula estimates using maximum likelihood.
 
