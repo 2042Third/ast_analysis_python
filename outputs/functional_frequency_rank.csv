@@ -1,7 +1,7 @@
 "funcname","freq"
-listComp,481384
-lambda,237034
-yield,163505
-dictComp,37432
-yieldFrom,14388
-setComp,6314
+listComp,1660013
+lambda,1008369
+yield,865481
+dictComp,81955
+yieldFrom,28365
+setComp,21147

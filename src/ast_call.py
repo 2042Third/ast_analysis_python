@@ -84,7 +84,8 @@ class Analysis_Ast_call(ast.NodeVisitor):
   
   # regex_resolve_level
   def rrl(self, f_path,level):
-    lvls = f_path.split(os.path.sep)
+    lvls = f_path.split('/')
+    # lvls = f_path.split(os.path.sep)
     if(level<=0):
       return lvls[-1]
     elif(len(lvls)>=level):

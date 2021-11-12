@@ -23,3 +23,23 @@ from `bigquery-public-data.github_repos.contents` as r, `bigquery-public-data.gi
 where f.repo_name in (
     select rl.repo_name from `ast-analysis-python.astmine.pythonlist` as rl
  ) and f.id like r.id;
+
+
+-- repos
+select * from `ast-analysis-python.astmine.pythonlist` limit 60000;
+
+
+-- file list
+
+SELECT 
+f.id, concat(f.repo_name, ' ', f.path)
+FROM `bigquery-public-data.github_repos.files` as f
+JOIN `ast-analysis-python.astmine.pythonlist_limit` as c on f.repo_name = c.repo_name;
+
+-- get file
+select f.f0_ as repo_path, c.content from `ast-analysis-python.astmine.py_list` as f 
+join `bigquery-public-data.github_repos.contents` as c on f.id=c.id 
+where f.f0_ like "%.py";
+
+-- 
+
