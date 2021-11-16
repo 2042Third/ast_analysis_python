@@ -1,10 +1,10 @@
 "funcname","freq"
-property,714846
-classmethod,349520
-staticmethod,223051
+property,714831
+classmethod,349513
+staticmethod,223008
 python_2_unicode_compatible,57466
 cached_property,36040
-abstractmethod,35121
+abstractmethod,35101
 login_required,21279
 contextmanager,16054
 conf,13132

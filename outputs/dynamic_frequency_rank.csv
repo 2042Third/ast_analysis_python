@@ -1,7 +1,7 @@
 "funcname","freq"
-getattr,687113
-hasattr,581938
-setattr,171486
-eval,42190
+getattr,687102
+hasattr,581927
+setattr,171484
+eval,42180
 exec,24447
-delattr,13820
+delattr,13818
