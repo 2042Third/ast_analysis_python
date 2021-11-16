@@ -1,4 +1,4 @@
 Directory: C:\Users\18604\Desktop\research\bigq_out\
 total files: 3844561
-error files: 0
-Time taken: 355.29 sec.
+error files: 750392
+Time taken: 5667.54 sec.

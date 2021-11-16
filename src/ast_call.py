@@ -79,6 +79,12 @@ class Analysis_Ast_call(ast.NodeVisitor):
       self.outfile.write(", ".join(tmp_l)+"\n")
     except: # Handles different languages
       self.outfile.write(", ".join([str(bytes(i, 'utf-8')) for i in tmp_l])+"\n")
+
+  def log_stat(self, a):
+    tmp_l = a.split(" ")[0]
+    tmp_l = tmp_l.split("/")
+    # print(tmp_l)
+    self.outfile.write(", ".join(tmp_l)+"\n")
     
 
   

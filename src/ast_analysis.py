@@ -18,6 +18,7 @@ count_exclusion = 0
 
 #User options
 verbosity = False
+stats_only = False
 all_files_in_repo=['../bigq_out/data-000000000000.csv','../bigq_out/data-000000000001.csv','../bigq_out/data-000000000002.csv','../bigq_out/data-000000000003.csv','../bigq_out/data-000000000004.csv','../bigq_out/data-000000000005.csv','../bigq_out/data-000000000006.csv','../bigq_out/data-000000000007.csv','../bigq_out/data-000000000008.csv','../bigq_out/data-000000000009.csv','../bigq_out/data-000000000010.csv','../bigq_out/data-000000000011.csv','../bigq_out/data-000000000012.csv','../bigq_out/data-000000000013.csv','../bigq_out/data-000000000014.csv','../bigq_out/data-000000000015.csv','../bigq_out/data-000000000016.csv','../bigq_out/data-000000000016.csv']
 
 
@@ -84,7 +85,25 @@ def read_all_file(visitor, fs, offset):
       except:
         continue
 
-  
+def read_all_stats(visitor, fs, offset):
+  # global all_files_in_repo
+  # trainxor = rd[[0]]
+  for data_full_csv in fs:
+    rd = pd.read_csv("../bigq_out/{}".format(data_full_csv))
+    for indx, file_pair in rd.iterrows():
+      # print(file_pair[0])
+      global count_files
+      count_files=count_files+1
+      if verbosity and int(count_files/1000)==count_files/1000:
+        global count_exclusion
+        print("[{} from \"{}\", {:.2f}% progress ]".format(indx,count_files,100*(count_files/3844561))
+          , end='\r', flush=True)
+      visitor.log_stat(file_pair[0])
+
+
+
+      
+ 
 
 def clean_name(a):
   if a[-1]!=os.path.sep :
@@ -93,14 +112,23 @@ def clean_name(a):
 
 def lib_check(fs):
   tSTART = time.time()
+
   oufile_name = "ast_analysis_data.csv"
+
+  if stats_only:
+    oufile_name = "ast_full_stats.csv"
+
+
 
   stats_file = "mining_stats.txt"
 
   visitor = ast_call.Analysis_Ast_call()
   visitor.clean_file_db(oufile_name);
   folder_name = clean_name(sys.argv[1])
-  read_all_file(visitor, fs,folder_name)
+  if stats_only:
+    read_all_stats(visitor, fs,folder_name)
+  else:
+    read_all_file(visitor, fs,folder_name)
   inp = ' '
   visitor.close_file_db()
   print("\nFinished search for "+str(count_files)+" files"+" ({:.02f}s)".format(time.time() - tSTART))
@@ -128,6 +156,8 @@ if __name__ == '__main__':
         verbosity = True
       elif inpts == "-w":
         writing_file = True
+      elif inpts == "-S":
+        stats_only = True
 
   fs = os.listdir(open_file)
 

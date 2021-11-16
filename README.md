@@ -81,19 +81,19 @@ Total 1,385,873 files.
 
 feature | count | %
 -- | -- | --
-none | 912,878 | 65.8%
-functional | 213,313 | 15.4%
-decorators | 96,178 | 6.9%
-dynamic | 50,185 | 3.6%
-functional & decorators | 49,837 | 3.6%
-functional & dynamic | 32,484 | 2.3%
-functional & dynamic & decorators | 16,918 | 1.2%
-dynamic & decorators | 13,080 | 0.9%
+none | 2,756,890 | 71.7%
+functional | 427,169 | 11.1%
+decorators | 157,443 | 4.0%
+dynamic | 140,344 | 3.7%
+functional & dynamic | 133,717 | 3.5%
+functional & decorators | 101,406 | 2.6%
+functional & dynamic & decorators | 91,660 | 2.4%
+dynamic & decorators | 35,836 | 0.9%
 
 <img src="./diagrams/organization/index.png" alt="Drawing" /> 
-Total 49545 Organizations.
+Total 48614 Organizations.
 <img src="./diagrams/project/index.png" alt="Drawing" /> 
-Total Projects.
+Total 43079 Projects.
 
 
 ### Relationship Between the Features
