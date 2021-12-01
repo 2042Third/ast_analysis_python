@@ -21,6 +21,7 @@ class Analysis_Ast_call(ast.NodeVisitor):
   dynamic_function="DYN"# dynamic
   functional_function="FNL"# functional
   decorator_function="DEC"# decorator
+  async_function="ASC"# async
   target_list_dynamic = ["getattr","setattr","delattr","hasattr","eval","exec"]
   target_list_functional = []
   target_list_decorators = []
@@ -118,6 +119,7 @@ class Analysis_Ast_call(ast.NodeVisitor):
 
   def visit_AsyncFunctionDef(self, node):
     for i in node.decorator_list:
+      self.log_current(i.id,node.lineno,self.async_function)
       if isinstance(i, ast.Name):
         self.log_current(i.id,node.lineno,self.decorator_function)
 
@@ -132,6 +134,15 @@ class Analysis_Ast_call(ast.NodeVisitor):
 
   def visit_Lambda(self, node):
     self.log_current("lambda",node.lineno,self.functional_function)
+    self.generic_visit(node)
+  def visit_AsyncFor(self, node):
+    self.log_current("asyncFor",node.lineno,self.async_function)
+    self.generic_visit(node)
+  def visit_AsyncWith(self, node):
+    self.log_current("asyncWith",node.lineno,self.async_function)
+    self.generic_visit(node)
+  def visit_With(self, node):
+    self.log_current("with",node.lineno,self.async_function)
     self.generic_visit(node)
 
   def visit_SetComp(self, node):
