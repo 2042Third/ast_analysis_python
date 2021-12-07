@@ -3,6 +3,7 @@ import ast
 import subprocess
 import sys
 import ast_fund
+import ast_custom
 import ast_test
 import ast_call
 import pdb
@@ -51,7 +52,6 @@ def find_all_file(visitor, fs, offset):
       if verbosity:
         print(offset+item)
       new_fs = list()
-
       new_fs = os.listdir(offset+item)
       try:
         find_all_file(visitor, new_fs,offset+item+os.path.sep)
@@ -60,12 +60,9 @@ def find_all_file(visitor, fs, offset):
 
 
 def read_all_file(visitor, fs, offset):
-  # global all_files_in_repo
-  # trainxor = rd[[0]]
   for data_full_csv in fs:
-    rd = pd.read_csv("../bigq_out/{}".format(data_full_csv))
+    rd = pd.read_csv("{}".format(data_full_csv))
     for indx, file_pair in rd.iterrows():
-      # print(file_pair[0])
       global count_files
       count_files=count_files+1
       if verbosity and int(count_files/1000)==count_files/1000:
@@ -74,9 +71,6 @@ def read_all_file(visitor, fs, offset):
       try:
         code = ast.parse(file_pair[1])
       except:
-        # if verbosity:
-        #   print("ERROR: Python cannot compile AST for {}!".format(data_full_csv))
-        # global count_exclusion
         count_exclusion = 1+ count_exclusion 
         continue
       ast_node = code
@@ -86,12 +80,9 @@ def read_all_file(visitor, fs, offset):
         continue
 
 def read_all_stats(visitor, fs, offset):
-  # global all_files_in_repo
-  # trainxor = rd[[0]]
   for data_full_csv in fs:
     rd = pd.read_csv("../bigq_out/{}".format(data_full_csv))
     for indx, file_pair in rd.iterrows():
-      # print(file_pair[0])
       global count_files
       count_files=count_files+1
       if verbosity and int(count_files/1000)==count_files/1000:
@@ -113,22 +104,27 @@ def clean_name(a):
 def lib_check(fs):
   tSTART = time.time()
 
-  oufile_name = "ast_analysis_data.csv"
+  oufile_name = "ast_with.csv"
+  # oufile_name = "ast_analysis_data.csv"
 
-  if stats_only:
-    oufile_name = "ast_full_stats.csv"
-
-
+  # if stats_only:
+  #   oufile_name = "ast_full_stats.csv"
 
   stats_file = "mining_stats.txt"
 
-  visitor = ast_call.Analysis_Ast_call()
+  # print("before visitor")
+  visitor = ast_custom.Custom_Visitor()
+  visitor._init_()
+  # print("after visitor")
+  # visitor = ast_call.Analysis_Ast_call()
   visitor.clean_file_db(oufile_name);
   folder_name = clean_name(sys.argv[1])
   if stats_only:
     read_all_stats(visitor, fs,folder_name)
   else:
-    read_all_file(visitor, fs,folder_name)
+    # print("reading")
+    # find_all_file(visitor, fs,folder_name)
+    read_all_file(visitor, fs,folder_name) # CHANGE BACK FOR CSV
   inp = ' '
   visitor.close_file_db()
   print("\nFinished search for "+str(count_files)+" files"+" ({:.02f}s)".format(time.time() - tSTART))
@@ -148,7 +144,8 @@ def lib_check(fs):
 
 if __name__ == '__main__':
   open_file =sys.argv[1]
-
+  if open_file[-1] != '/' or open_file[-1] != '\\':
+    open_file=open_file+'/'
   writing_file = False
   for inpts in sys.argv:
     if inpts[0] == '-':
@@ -160,8 +157,9 @@ if __name__ == '__main__':
         stats_only = True
 
   fs = os.listdir(open_file)
-
+  fs = [open_file+i for i in fs]
   print(fs)
+  # quit()
   lib_check(fs)
 
   

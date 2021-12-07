@@ -1,0 +1,34 @@
+features            |freq  |
+--------------------+------+
+ FNL                |335014|
+ ASC                |153599|
+ DEC                |134396|
+ DYN                |121333|
+ FNL DYN            |103806|
+ FNL ASC            | 91616|
+ FNL DEC            | 69838|
+ FNL DYN DEC        | 59821|
+ FNL DYN DEC ASC    | 31575|
+ FNL DEC ASC        | 31094|
+ FNL DYN ASC        | 29801|
+ DYN DEC            | 29779|
+ DEC ASC            | 22549|
+ DYN ASC            | 18965|
+ DYN DEC ASC        |  5972|
+ DEC WTH            |   388|
+ WTH                |   325|
+ FNL DEC WTH        |   248|
+ FNL WTH            |   164|
+ FNL DYN DEC WTH    |   151|
+                    |   126|
+ FNL DEC WTH ASC    |   109|
+ DEC WTH ASC        |   105|
+ FNL WTH ASC        |    79|
+ WTH ASC            |    71|
+ FNL DYN DEC WTH ASC|    49|
+ DYN DEC WTH        |    48|
+ FNL DYN WTH        |    43|
+ DYN WTH            |    23|
+ FNL DYN WTH ASC    |    14|
+ DYN DEC WTH ASC    |    10|
+ DYN WTH ASC        |     4|
