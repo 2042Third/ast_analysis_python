@@ -17,9 +17,10 @@ def fix_rows( fname):
         a = i[3].replace(" ","/",1)
         a = a.replace("\"","")
         b = a.split('/')
+        # print("\n[%s]\n"%i[7].replace("\"",""))
         try:
           oufile.write("\"{}\", \"{}\", \"{}\", \"{}\", {}, {}, {}, {}\n".format("bigq",
-            b[0],b[1],a,i[4],i[5],i[6],i[7]))
+            b[0],b[1],a,i[4],i[5],i[6],i[7].replace("\"","")))
         except:
           print("EXCEPT{}".format(ec))
           ec+=1

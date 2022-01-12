@@ -1,4 +1,4 @@
-Directory: ../bigq_small\
-total files: 1
-error files: 0
-Time taken: 0.00 sec.
+Directory: ../bigq_out\
+total files: 3844561
+error files: 750392
+Time taken: 5376.27 sec.

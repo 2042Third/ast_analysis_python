@@ -1,0 +1,38 @@
+import csv
+
+# import time
+
+
+
+def fix_rows( fname):
+  indx=0
+  ec=0
+  oufile=open("fixed_"+fname,"w")
+  with open(fname, newline='') as csvfile:
+    spamreader = csv.reader(csvfile, delimiter=',', quotechar='\"')
+    for i in spamreader:
+        print ("[{:.2f}%]-- Reading . . . ".format(indx/7062170), end='\r', flush=True)
+
+        i=[s.strip().replace("\"","") for s in i]
+        a = i[3].replace(" ","/",1)
+        b = a.split('/')
+        # print("\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", {}, {}\n".format("bigq",
+        #     b[0],b[1],a,i[4],i[5],i[6],i[7] ))
+        # quit()
+        try:
+          oufile.write("\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", {}, {}\n".format("bigq",
+            b[0],b[1],a,i[4],i[5],i[6],i[7] ))
+        except:
+          print("EXCEPT{}".format(ec))
+          ec+=1
+        indx+=1
+  oufile.close()
+
+    
+
+def main():
+  fl=input("File:")
+  fix_rows(fl)
+
+if __name__ == '__main__':
+  main()

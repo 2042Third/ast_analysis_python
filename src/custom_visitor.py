@@ -83,14 +83,13 @@ class Target_Visitor(ast.NodeVisitor):
 
 
   def visit_With(self, node):
-    # print("[target] with")
     for i in node.items:
       self.visit(i.context_expr)
 
   def visit_Name(self, node):
-    # print("[target] Name {}".format(node.id))
-    if(node.id == "open"):
-      self.log_current("open",node.lineno,self.async_function)
+    self.log_current(node.id,node.lineno,self.async_function)
+    # if(node.id == "open"):
+    #   self.log_current("open",node.lineno,self.async_function)
 
 
   def visiting_this(self, node, name ):
