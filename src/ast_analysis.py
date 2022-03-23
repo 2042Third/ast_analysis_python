@@ -29,28 +29,34 @@ def general_dump(node):
 def find_all_file(visitor, fs, offset):
 
   for item in fs:
+
+    # print("Dir: %s" % offset+item)
     if(os.path.isfile(offset+item)) and (".py" == item[-3:]):
       global count_files
       count_files=count_files+1
-      if verbosity:
-        print("-{}".format(offset+item))
+
       try:
         code = ast.parse(Path(offset+item , encoding="utf").read_text())
       except:
-        if verbosity:
-          print("ERROR: Python cannot compile AST for {}!".format(offset+item))
+        # if verbosity:
+        #   print("ERROR: Python cannot compile AST for {}!".format(offset+item))
         global count_exclusion
         count_exclusion = 1+ count_exclusion 
         continue
+
+      if verbosity and int(count_files/1000)==count_files/1000:
+          # global count_exclusion
+          print("[read {} , {} excluded] {}".format(count_files,count_exclusion,offset+item))
       ast_node = code
+
       try:
         visitor.visiting_this(code,offset+item)
       except:
         continue
 
     elif os.path.isdir(offset+item):
-      if verbosity:
-        print(offset+item)
+      # if verbosity:
+      #   print(offset+item)
       new_fs = list()
       new_fs = os.listdir(offset+item)
       try:
@@ -105,26 +111,23 @@ def lib_check(fs):
   tSTART = time.time()
 
   oufile_name = "ast_with.csv"
-  # oufile_name = "ast_analysis_data.csv"
+  oufile_name = "ast_analysis_data.csv"
 
-  # if stats_only:
-  #   oufile_name = "ast_full_stats.csv"
+  if stats_only:
+    oufile_name = "ast_full_stats.csv"
 
   stats_file = "mining_stats.txt"
 
-  # print("before visitor")
-  visitor = ast_custom.Custom_Visitor()
-  visitor._init_()
-  # print("after visitor")
+  visitor = ast_custom.Custom_Visitor() # custom only
+  visitor._init_() # custom only
   # visitor = ast_call.Analysis_Ast_call()
   visitor.clean_file_db(oufile_name);
   folder_name = clean_name(sys.argv[1])
   if stats_only:
     read_all_stats(visitor, fs,folder_name)
   else:
-    # print("reading")
-    # find_all_file(visitor, fs,folder_name)
-    read_all_file(visitor, fs,folder_name) # CHANGE BACK FOR CSV
+    # find_all_file(visitor, fs,'') # files with folders
+    read_all_file(visitor, fs,folder_name) # csv
   inp = ' '
   visitor.close_file_db()
   print("\nFinished search for "+str(count_files)+" files"+" ({:.02f}s)".format(time.time() - tSTART))
@@ -157,7 +160,8 @@ if __name__ == '__main__':
         stats_only = True
 
   fs = os.listdir(open_file)
-  fs = [open_file+i for i in fs]
+  if not stats_only:
+    fs = [open_file+i for i in fs]
   print(fs)
   # quit()
   lib_check(fs)

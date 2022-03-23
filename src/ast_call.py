@@ -148,6 +148,9 @@ class Analysis_Ast_call(ast.NodeVisitor):
   def visit_SetComp(self, node):
     self.log_current("setComp",node.lineno,self.functional_function)
     self.generic_visit(node)
+  def visit_GeneratorExp(self, node):
+    self.log_current("generatorExp",node.lineno,self.functional_function)
+    self.generic_visit(node)
 
   def visit_DictComp(self, node):
     self.log_current("dictComp",node.lineno,self.functional_function)

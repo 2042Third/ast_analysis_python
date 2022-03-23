@@ -81,23 +81,29 @@ class Target_Visitor(ast.NodeVisitor):
   def close_file_db(self):
     self.outfile.close()
 
+# visits defs
 
   def visit_With(self, node):
     for i in node.items:
-      self.visit(i.context_expr)
+      if isinstance(i.context_expr, ast.Call): # recur only on ast.Call
+        self.visit(i.context_expr)
 
+  # Can only be reached if it is from an ast.Call
   def visit_Name(self, node):
     self.log_current(node.id,node.lineno,self.async_function)
-    # if(node.id == "open"):
-    #   self.log_current("open",node.lineno,self.async_function)
+
+  # Can only be reached if it is from an ast.Call
+  def visit_Attribute(self, node):
+    self.log_current(node.attr,node.lineno,self.async_function)
+    self.visit(node.value)
 
 
   def visiting_this(self, node, name ):
     self.current_name = name
-    self.visit(node)
+    self.visit(node) # always a With construct
 
 
 
-  def visit_Open(self, node):
-    # print("[target] Open")
-    self.log_current("with",node.lineno,self.async_function)
+  # def visit_Open(self, node):
+  #   # print("[target] Open")
+  #   self.log_current("with",node.lineno,self.async_function)
