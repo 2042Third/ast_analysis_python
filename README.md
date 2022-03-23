@@ -160,6 +160,7 @@ To be finished
 
 ## Download Results
 
-<a href="https://pdm.pw/mine/downloads/" target="_blank" rel="noopener noreferrer">list of all data used</a>
+<a href="https://pdm.pw/mine/downloads/" target="_blank" rel="noopener noreferrer">list of all data used</a><br>
+<a href="https://u.pcloud.link/publink/show?code=kZzeQXVZoMoIpOYVxByj71P5dHYoY4viIMNV" target="_blank" rel="noopener noreferrer">bigquery data (25 gb)</a>
 
 
