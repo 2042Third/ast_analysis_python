@@ -111,7 +111,7 @@ def lib_check(fs):
   tSTART = time.time()
 
   oufile_name = "ast_with.csv"
-  oufile_name = "ast_analysis_data.csv"
+  # oufile_name = "ast_analysis_data.csv"
 
   if stats_only:
     oufile_name = "ast_full_stats.csv"
@@ -156,8 +156,8 @@ if __name__ == '__main__':
         verbosity = True
       elif inpts == "-w":
         writing_file = True
-      elif inpts == "-S":
-        stats_only = True
+      # elif inpts == "-S":
+      #   stats_only = True
 
   fs = os.listdir(open_file)
   if not stats_only:

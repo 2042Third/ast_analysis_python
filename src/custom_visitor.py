@@ -22,6 +22,8 @@ class Target_Visitor(ast.NodeVisitor):
   functional_function="FNL"# functional
   decorator_function="DEC"# decorator
   async_function="ASC"# async
+  with_attr_type="with_attribute"
+  with_name_type="with_name"
   target_list_dynamic = ["getattr","setattr","delattr","hasattr","eval","exec"]
   target_list_functional = []
   target_list_decorators = []
@@ -90,11 +92,15 @@ class Target_Visitor(ast.NodeVisitor):
 
   # Can only be reached if it is from an ast.Call
   def visit_Name(self, node):
-    self.log_current(node.id,node.lineno,self.async_function)
+    self.count+=1
+    print("\r\"With\" %s observed, recorded construct type \"Name\", value=\"%s\"" % (self.count,node.id), end='')
+    self.log_current(node.id,node.lineno,self.with_name_type)
 
   # Can only be reached if it is from an ast.Call
   def visit_Attribute(self, node):
-    self.log_current(node.attr,node.lineno,self.async_function)
+    self.count+=1
+    print("\r\"With\" %s observed, recorded construct type \"Attribute\", value=\"%s\"" % (self.count,node.id), end='')
+    self.log_current(node.attr,node.lineno,self.with_attr_type)
     self.visit(node.value)
 
 

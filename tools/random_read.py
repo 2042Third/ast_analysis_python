@@ -58,7 +58,8 @@ class rand_rd(object):
           if counter%stopper==0:
             line_num = i[7]
             file_name = i[3].strip().replace("\"","")
-            func_name = i[6].strip()
+            func_name = i[5].strip() # function type
+            # func_name = i[6].strip() #function name
             print("\'%s\'"%file_name)
             print("\'%s\'"%func_name)
             if self.ps_filter(func_name,fltr):
@@ -83,7 +84,8 @@ class rand_rd(object):
 if __name__ == '__main__':
   random.seed(15829)
   a = rand_rd()
-  fltr = ["self","open","mock"]
+  fltr = ["DYN"]
+  # fltr = ["self","open","mock"]
   fl=input("File:")
   a.start(fl, fltr)
   print("Reader closed.")
